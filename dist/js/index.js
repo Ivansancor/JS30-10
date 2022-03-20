@@ -1,4 +1,5 @@
 const items = document.querySelectorAll("input[type=checkbox]");
+const combos = document.querySelectorAll(".item");
 
 console.log(items);
 
@@ -14,6 +15,7 @@ function check(e) {
     let isBetween = false;
 
     if (this.checked && e.shiftKey) {
+
         items.forEach(item => {
             if (item === lastChecked || item === this) {
                 isBetween = !isBetween;
@@ -21,9 +23,10 @@ function check(e) {
 
             if (isBetween) {
                 item.checked = true;
-
             }
-
+            if (item.checked && item != this) {
+                item.labels[0].classList.add("checked");
+            }
         });
     }
 

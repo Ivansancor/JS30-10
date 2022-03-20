@@ -1,4 +1,4 @@
-$grey: #c7c7c7;
+$color: #2c92cc;
 
 * {
   margin: 0;
@@ -7,31 +7,40 @@ $grey: #c7c7c7;
 }
 
 body {
-  background-color: $grey;
+  background-color: $color;
 
   .container {
-    margin: 0 auto;
+    margin: 1rem auto;
     width: 50vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .item {
+      border-bottom: 0.2rem solid $color;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 5rem;
+      width: 100%;
+
       label {
         font-family: Arial, Helvetica, sans-serif;
-        font-weight: 400;
         font-size: 2rem;
-        line-height: 5rem;
-        margin-left: 1rem;
       }
 
       input[type="checkbox"] {
-        width: 1.2rem;
+        width: 25%;
         height: 1.2rem;
       }
 
       .checked {
-        text-decoration: line-through;
+        text-decoration: line-through 0.2rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: $color;
       }
     }
   }
