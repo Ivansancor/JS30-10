@@ -30,6 +30,22 @@ function check(e) {
         });
     }
 
+    else if (!this.checked && e.shiftKey) {
+
+        items.forEach(item => {
+            if (item === lastChecked || item === this) {
+                isBetween = !isBetween;
+            }
+
+            if (isBetween) {
+                item.checked = false;
+            }
+            if (!item.checked && item != this) {
+                item.labels[0].classList.remove("checked");
+            }
+        });
+    }
+
     lastChecked = this;
 }
 
